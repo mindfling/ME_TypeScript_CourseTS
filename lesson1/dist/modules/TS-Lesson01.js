@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.carResult = void 0;
 const car = {
     brand: 'BMW',
     model: 'xDrive30e',
@@ -23,4 +26,4 @@ const totalVerdict = (car) => {
     const verdict = sumRating / car.rating.length;
     return verdict;
 };
-export const carResult = totalVerdict(car);
+exports.carResult = totalVerdict(car);
