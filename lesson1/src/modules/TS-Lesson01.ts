@@ -1,4 +1,12 @@
-const car = {
+// obj car
+const car: { // тип
+  brand: string;
+  model: string;
+  country: string;
+  price: number;
+  color: string;
+  rating: string[][ ];
+} = { // значение
   brand: 'BMW',
   model: 'xDrive30e',
   country: 'Germany',
@@ -14,17 +22,28 @@ const car = {
     ['value', '7.5'],
     ['wildcard', '8.5'],
   ],
-
 };
 
-const totalVerdict = (car:any) => {
-  const sumRating = car.rating.reduce((acc:any, item:any) => {
+// func
+const totalVerdict = (car: { // тип аргумента обкт 
+  brand: string;
+  model: string;
+  country: string;
+  price: number;
+  color: string;
+  rating: string[][ ];
+}) => {
+  const sumRating = car.rating.reduce((
+      acc: number,
+      item: string[],
+    ) => {
     console.log(acc, item);
 
-    return item[1] + acc;
+    return acc + parseFloat(item[1]);
   }, 0);
   const verdict = sumRating / car.rating.length;
   return verdict;
 };
 
+// экспорт этого значения из модуля
 export const carResult = totalVerdict(car);
