@@ -1,7 +1,11 @@
 # ME_TypeScript_CourseTS
 Methed TypeScript Course Lessons
+https://github.com/mindfling/ME_TypeScript_CourseTS
 
 
-https://github.com/mindfling/ME_TypeScript_CourseTS/tree/main
+### prelesson:
+https://github.com/mindfling/ME_TypeScript_CourseTS/tree/prelesson
 
-prelesson
+### lesson1:
+https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson1
+
