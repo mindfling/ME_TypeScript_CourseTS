@@ -4,4 +4,13 @@ Methed TypeScript Course Lessons
 
 https://github.com/mindfling/ME_TypeScript_CourseTS/tree/main
 
-prelesson
+prelesson:
+
+// install TypeScript tsc globaly
+`npm i -g typescript`
+
+// init tsconfig.json
+`tsc --init`
+
+// version
+`tsc -v`
