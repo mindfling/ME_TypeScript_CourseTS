@@ -17,8 +17,8 @@ const car = {
 
 };
 
-const totalVerdict = (car) => {
-  const sumRating = car.rating.reduce((acc, item) => {
+const totalVerdict = (car:any) => {
+  const sumRating = car.rating.reduce((acc:any, item:any) => {
     console.log(acc, item);
 
     return item[1] + acc;
