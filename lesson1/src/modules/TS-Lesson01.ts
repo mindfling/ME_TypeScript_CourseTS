@@ -5,7 +5,7 @@ const car: { // тип
   country: string;
   price: number;
   color: string;
-  rating: string[][ ];
+  rating: string[][];
 } = { // значение
   brand: 'BMW',
   model: 'xDrive30e',
@@ -31,14 +31,13 @@ const totalVerdict = (car: { // тип аргумента обкт
   country: string;
   price: number;
   color: string;
-  rating: string[][ ];
+  rating: string[][];
 }) => {
   const sumRating = car.rating.reduce((
       acc: number,
       item: string[],
     ) => {
     console.log(acc, item);
-
     return acc + parseFloat(item[1]);
   }, 0);
   const verdict = sumRating / car.rating.length;

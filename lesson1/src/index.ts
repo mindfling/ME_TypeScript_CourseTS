@@ -1,3 +1,4 @@
 import { carResult } from './modules/TS-Lesson01';
+
 // car result
-console.log('carResult: ', carResult);
+console.log('\nResult for this car is: ', carResult);
