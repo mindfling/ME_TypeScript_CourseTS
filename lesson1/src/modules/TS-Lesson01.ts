@@ -1,12 +1,17 @@
-// obj car
-const car: { // тип
+// пользоватльские типы
+type Rate = [string, string]; // кортеж - упорядоченный массив
+type Car = {
   brand: string;
   model: string;
   country: string;
   price: number;
   color: string;
-  rating: [string, string][]; // массив кортежей
-} = { // значение
+  rating: Rate[]; // массив кортежей
+};
+
+
+// obj car
+const car: Car = { // значение
   brand: 'BMW',
   model: 'xDrive30e',
   country: 'Germany',
@@ -25,18 +30,11 @@ const car: { // тип
 };
 
 // function функция оценки 
-const totalVerdict = (car: { // тип аргумента обкт 
-  brand: string;
-  model: string;
-  country: string;
-  price: number;
-  color: string;
-  rating: [string, string][];
-}) => {
+const totalVerdict = (car: Car) => {
   const sumRating = car.rating.reduce((
-      acc: number,
-      item: string[],
-    ) => {
+    acc: number,
+    item: Rate,
+  ) => {
     console.log(acc, item);
     return acc + parseFloat(item[1]);
   }, 0);
