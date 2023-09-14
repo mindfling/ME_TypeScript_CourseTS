@@ -24,25 +24,22 @@ const persons: User[] = [
     group: 'IT-bloger',
   },
   {
-    name: "Dim",
+    name: "Dim Димыч",
     age: 36,
     group: 'Семья',
   },
   {
-    name: "Вадим",
+    name: "Вадим Вадимыч",
     age: 45,
     group: 'Друзья',
   }
 ];
 
+
 const logPerson = (user: User) => {
   console.log(`${user.name}, ${user.age}`);
 }
 
+// перебираем выводим информацию о всех пользователях
 console.log('Users:');
 persons.forEach(logPerson);
-
-// перебираем выводим информацию о всех пользователях
-persons.forEach((item, index, arr) => {
-  logPerson(item);
-})

@@ -16,13 +16,13 @@ const persons = [
         group: 'IT-bloger',
     },
     {
-        name: "Dim Dimi4",
+        name: "Dim Димыч",
         age: 36,
         group: 'Семья',
     },
     {
-        name: "Ахауля Ляляпта",
-        age: 21,
+        name: "Вадим Вадимыч",
+        age: 45,
         group: 'Друзья',
     }
 ];
@@ -31,6 +31,3 @@ const logPerson = (user) => {
 };
 console.log('Users:');
 persons.forEach(logPerson);
-persons.forEach((item, index, arr) => {
-    logPerson(item);
-});
