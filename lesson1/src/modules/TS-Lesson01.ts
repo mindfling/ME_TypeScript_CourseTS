@@ -5,12 +5,12 @@ const car: { // тип
   country: string;
   price: number;
   color: string;
-  rating: string[][];
+  rating: [string, string][]; // массив кортежей
 } = { // значение
   brand: 'BMW',
   model: 'xDrive30e',
   country: 'Germany',
-  price: 50_000,
+  price: 5_000_000,
   color: 'white',
   rating: [
     ['performance', '8.0'],
@@ -24,14 +24,14 @@ const car: { // тип
   ],
 };
 
-// func
+// function функция оценки 
 const totalVerdict = (car: { // тип аргумента обкт 
   brand: string;
   model: string;
   country: string;
   price: number;
   color: string;
-  rating: string[][];
+  rating: [string, string][];
 }) => {
   const sumRating = car.rating.reduce((
       acc: number,
