@@ -9,3 +9,8 @@ https://github.com/mindfling/ME_TypeScript_CourseTS/tree/prelesson
 ### lesson1:
 https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson1
 
+
+```
+  npm init -y
+  tsc --init
+```
