@@ -15,3 +15,4 @@ https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson2
 ### lesson3:
 https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson3
 
+- https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson3/lesson3/task3
