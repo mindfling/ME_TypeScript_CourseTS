@@ -1,49 +1,58 @@
 // определяем типы
-type User = {
+type Member = {
   name: string;
   age: number;
-  group?: string;
+}
+
+type User = Member & {
+  occupation: 'user';
+  group: string;
 };
 
-type Admin = {
-  name: string;
-  age: number;
+type Admin = Member & {
+  occupation: 'admin';
   role: string;
 }
 
 type Person = User | Admin;
 
+
 const persons: Person[] = [
   {
+    occupation: 'admin',
     name: 'Кирилл',
-    age: 41,
-    role: 'System Administrator',
+    age: 35,
+    role: 'administrator',
   },
   {
+    occupation: 'user',
     name: 'Иван Петров',
     age: 27,
     group: 'SEO-специалист',
   },
   {
+    occupation: 'user',
     name: 'Марат',
     age: 20,
     group: 'Музыкант',
   },
   {
+    occupation: 'user',
     name: 'Дмитрий',
     age: 37,
     group: 'IT-bloger',
   },
   {
-    name: "Вадим Вадимыч",
-    age: 45,
+    occupation: 'user',
+    name: "Вадим",
+    age: 35,
     group: 'Друзья',
   },
 ];
 
 
 const logPerson = (user: Person) => {
-  console.log(`${user.name}, ${user.age}`);
+  console.log(`${user.name}, ${user.age} <- ${user.occupation}`);
 };
 
 persons.forEach(logPerson);
