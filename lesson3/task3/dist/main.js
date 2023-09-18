@@ -38,11 +38,7 @@ const persons = [
         rel: 'ПРосто гости',
     },
 ];
-/*
-const logPerson = (user: Person) => {
-  console.log(`${user.name}, ${user.age} <- ${user.type}`);
-};
-*/
+// функ логирование информация о пользователях
 const logPerson = (person) => {
     let information;
     if (person.type === 'admin') {
@@ -54,6 +50,6 @@ const logPerson = (person) => {
     else {
         information = person.rel;
     }
-    console.log(`Имя: ${person.name}, возраст: ${person.age}, Еще пару слов: ${information}`);
+    console.log(`${person.name}, ${person.age}, ${information}`);
 };
 persons.forEach(logPerson);

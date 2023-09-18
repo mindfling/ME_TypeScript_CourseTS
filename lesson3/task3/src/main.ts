@@ -1,23 +1,25 @@
 console.log('helllo');
 
 // интерфейсы пользователей
-type Member = {
+interface Member {
+  type: 'user' | 'admin' | 'guest';
   name: string;
   age: number;
+}
+
+
+interface User extends Member{
+  type: 'user';
   group: string;
 }
 
-interface Admin {
+interface Admin extends Member{
   type: 'admin';
-  name: string;
-  age: number;
   role: string;
 }
 
-interface Guest {
+interface Guest extends Member{
   type: 'guest';
-  name: string;
-  age: number;
   rel: string;
 }
 
@@ -64,12 +66,8 @@ const persons: Person[] = [
   },
 ];
 
-/*
-const logPerson = (user: Person) => {
-  console.log(`${user.name}, ${user.age} <- ${user.type}`);
-};
-*/
 
+// функ логирование информация о пользователях
 const logPerson = (person: Person) => {
   let information: string;
   
@@ -81,7 +79,8 @@ const logPerson = (person: Person) => {
     information = person.rel;
   }
 
-  console.log(`Имя: ${person.name}, возраст: ${person.age}, Еще пару слов: ${information}`);
+  console.log(`${person.name}, ${person.age}, ${information}`);
 };
+
 
 persons.forEach(logPerson);
