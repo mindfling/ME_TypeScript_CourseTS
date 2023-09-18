@@ -64,9 +64,9 @@ const persons: Person[] = [
 ];
 
 
-const isAdmin = (person: Person) => {
-  return person.type === 'admin';
-}
+
+const isAdmin = (person: Person) =>
+  person.type === 'admin';
 
 const isUser = (person: Person) =>
   person.type === 'user';
@@ -75,9 +75,10 @@ const isGuest = (person: Person) =>
   person.type === 'guest';
 
 
+
 const logPerson = (person: Person) => {
   let information: string;
-  
+
   if (person.type === 'admin') {
     information = person.role;
   } else if (person.type === 'user') {
@@ -86,18 +87,51 @@ const logPerson = (person: Person) => {
     information = person.rel;
   }
 
-  console.log(`Имя: ${person.name}, возраст: ${person.age}, Еще пару слов: ${information}`);
+  console.log(` - ${person.name}, ${person.age}, ${information}`);
 };
 
 
 persons.forEach(logPerson);
-console.log('\n');
 
 console.log('Admins:');
 persons.filter(isAdmin).forEach(logPerson);
 
+console.log();
+
 console.log('Users:');
 persons.filter(isUser).forEach(logPerson);
 
-console.log('Guests:');
-persons.filter(isGuest).forEach(logPerson);
+
+persons.forEach(logPerson);
+
+console.log('Admins:');
+persons.filter(isAdmin).forEach(logPerson);
+
+
+console.log('Users:');
+persons.filter(isUser).forEach(logPerson);
+
+
+
+
+
+const logPerson4 = (person: Person) => {
+  let information: string = '';
+  if (isAdmin(person)) {
+    information = (person as Admin).role; //person.role;
+  }
+  if (isUser(person)) {
+    information = (<User>person).group; //person.group;
+  }
+  console.log(` - ${person.name}, ${person.age}, ${information}`);
+}
+
+
+
+console.log('Admins:');
+persons.filter(isAdmin).forEach(logPerson);
+
+console.log();
+
+console.log('Users:');
+persons.filter(isUser).forEach(logPerson);

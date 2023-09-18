@@ -55,11 +55,13 @@ const logPerson = (person) => {
     }
     console.log(`Имя: ${person.name}, возраст: ${person.age}, Еще пару слов: ${information}`);
 };
+
 persons.forEach(logPerson);
-console.log('\n');
+
 console.log('Admins:');
 persons.filter(isAdmin).forEach(logPerson);
+
+console.log();
+
 console.log('Users:');
 persons.filter(isUser).forEach(logPerson);
-console.log('Guests:');
-persons.filter(isGuest).forEach(logPerson);
