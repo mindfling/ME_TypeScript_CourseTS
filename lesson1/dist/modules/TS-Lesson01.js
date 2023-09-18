@@ -5,7 +5,7 @@ const car = {
     brand: 'BMW',
     model: 'xDrive30e',
     country: 'Germany',
-    price: 5_000_000,
+    price: 500_000,
     color: 'white',
     rating: [
         ['performance', '8.0'],

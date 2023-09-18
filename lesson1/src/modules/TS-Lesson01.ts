@@ -1,5 +1,7 @@
-// пользоватльские типы
+// * пользоватльские типы
 type Rate = [string, string]; // кортеж - упорядоченный массив
+
+/*
 type Car = {
   brand: string;
   model: string;
@@ -8,6 +10,32 @@ type Car = {
   color: string;
   rating: Rate[]; // массив кортежей
 };
+*/
+
+
+// * пользовательские интерфейсы
+interface OuterView {
+  color: 
+  | 'white'
+  | 'lightgrey' 
+  | 'grey' 
+  | 'darkgrey' 
+  | 'yellowgreen' 
+  | 'lawngreen'
+  | 'green' 
+  | 'black'
+}
+  
+interface Product {
+  brand: string;
+  model: string;
+}
+
+interface Car extends Product, OuterView {
+  country: string;
+  price: number;
+  rating: Rate[];
+}
 
 
 // obj car
@@ -15,7 +43,7 @@ const car: Car = { // значение
   brand: 'BMW',
   model: 'xDrive30e',
   country: 'Germany',
-  price: 5_000_000,
+  price: 500_000,
   color: 'white',
   rating: [
     ['performance', '8.0'],
