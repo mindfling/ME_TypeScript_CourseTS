@@ -7,5 +7,8 @@ class Student {
         this.name = name;
         this.course = course;
     }
+    getInfo() {
+        return `${this.name} учится на курсе ${this.course}`;
+    }
 }
 const student1 = new Student('Дмитри', 'Верстка сайтов');

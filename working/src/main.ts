@@ -8,6 +8,10 @@ class Student {
     this.name = name;
     this.course = course;
   }
+  
+  getInfo(): string {
+    return `${this.name} учится на курсе ${this.course}`;
+  }
 }
 
 
