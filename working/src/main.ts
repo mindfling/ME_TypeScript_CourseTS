@@ -43,15 +43,32 @@ class Student {
   // сеттер должен совпадать с именем переменной и возвращать её тип
   set module(module: number) {
     this._module = module;
+    this.updatedAt = new Date();
+  }
+  
+  
+  changeStatus(status: StatusStudent): void {
+    this.status = status;
+    this.updatedAt = new Date();
   }
 }
 
 
 // экземпляр класса
 const student1: Student = new Student('Дмитри', 'Верстка сайтов');
+console.log('student1: ', student1);
+
 console.log(student1.info);
 
 student1.module = 23;
 console.log('Модуль изменен на ', student1.module );
 
-console.log('student: ', student1);
+console.log('1 student: ', student1);
+
+setTimeout(() => {
+  student1.changeStatus(StatusStudent.bachelor);
+  console.log('timeout 5s student: ', student1);
+}, 5000);
+
+console.log('3 student: ', student1);
+
