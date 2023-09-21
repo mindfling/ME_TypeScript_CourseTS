@@ -4,7 +4,7 @@ class Student {
   // поля public
   name: string;
   course: string;
-  // поля приватные
+  // поля приватные ! or ?
   _module: number;
   
   // конструктор
@@ -16,7 +16,11 @@ class Student {
   
   // просто геттер getter
   get info(): string {
-    return `${this.name} учится на курсе ${this.course}`;
+    return `${this.name} учится на курсе ${this.course} на модуле ${this._module}`;
+  }
+  
+  get module(): number {
+    return this._module;
   }
   
   // сеттер
@@ -29,3 +33,7 @@ class Student {
 // экземпляр класса
 const student1: Student = new Student('Дмитри', 'Верстка сайтов');
 console.log(student1.info);
+
+student1.module = 23;
+console.log('Модуль изменен на ', student1.module );
+
