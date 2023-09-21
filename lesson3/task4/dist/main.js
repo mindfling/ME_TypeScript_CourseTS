@@ -1,4 +1,5 @@
 "use strict";
+// информация о всех пользователях
 const persons = [
     {
         type: 'user',
@@ -36,32 +37,52 @@ const persons = [
         age: 21,
         rel: 'Просто гости',
     },
+    {
+        type: 'guest',
+        name: 'Коля',
+        age: 29,
+        rel: 'Наш сосед',
+    },
 ];
+// * type guards funcs:
+// проверка на Администратора
 const isAdmin = (person) => {
-    return person.type === 'admin';
-};
-const isUser = (person) => person.type === 'user';
-const isGuest = (person) => person.type === 'guest';
-const logPerson = (person) => {
-    let information;
     if (person.type === 'admin') {
-        information = person.role;
-    }
-    else if (person.type === 'user') {
-        information = person.group;
+        return true;
     }
     else {
+        return false;
+    }
+};
+// проверка на Просто Пользователя
+// короче
+const isUser = (person) => {
+    return person.type === 'user';
+};
+// проверка на Гостя
+// еще короче
+const isGuest = (person) => person.type === 'guest';
+// * функция логирования
+// подразумевается три вида акаунтов пользователей
+const logPerson = (person) => {
+    let information = '';
+    if (isAdmin(person)) {
+        information = person.role;
+    }
+    if (isUser(person)) {
+        information = person.group;
+    }
+    if (isGuest(person)) {
         information = person.rel;
     }
-    console.log(`Имя: ${person.name}, возраст: ${person.age}, Еще пару слов: ${information}`);
+    console.log(` - ${person.name}, ${person.age}, ${information}`);
 };
-
+// выводим информацию о пользователях
+console.log('Все пользователи:');
 persons.forEach(logPerson);
-
-console.log('Admins:');
+console.log('\nAdmins:');
 persons.filter(isAdmin).forEach(logPerson);
-
-console.log();
-
-console.log('Users:');
+console.log('\nUsers:');
 persons.filter(isUser).forEach(logPerson);
+console.log('\nGuest:');
+persons.filter(isGuest).forEach(logPerson);

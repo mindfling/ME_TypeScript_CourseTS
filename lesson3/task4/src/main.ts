@@ -1,22 +1,23 @@
-// интерфейсы пользователей
-interface User {
-  type: 'user';
+// интерфейс пользователей
+interface Member {
+  type: 'user' | 'admin' | 'guest';
   name: string;
   age: number;
+}
+
+// наследуем интерфейсы
+interface User extends Member {
+  type: 'user';
   group: string;
 }
 
-interface Admin {
+interface Admin extends Member {
   type: 'admin';
-  name: string;
-  age: number;
   role: string;
 }
 
-interface Guest {
+interface Guest extends Member {
   type: 'guest';
-  name: string;
-  age: number;
   rel: string;
 }
 
@@ -24,6 +25,7 @@ interface Guest {
 type Person = User | Admin | Guest;
 
 
+// информация о всех пользователях
 const persons: Person[] = [
   {
     type: 'user',
@@ -61,77 +63,64 @@ const persons: Person[] = [
     age: 21,
     rel: 'Просто гости',
   },
+  {
+    type: 'guest',
+    name: 'Коля',
+    age: 29,
+    rel: 'Наш сосед',
+  },
 ];
 
 
-
-const isAdmin = (person: Person) =>
-  person.type === 'admin';
-
-const isUser = (person: Person) =>
-  person.type === 'user';
-
-const isGuest = (person: Person) =>
-  person.type === 'guest';
-
-
-
-const logPerson = (person: Person) => {
-  let information: string;
-
+// * type guards funcs:
+// проверка на Администратора
+const isAdmin = (person: Admin | User | Guest): person is Admin => {
   if (person.type === 'admin') {
-    information = person.role;
-  } else if (person.type === 'user') {
-    information = person.group;
+    return true;
   } else {
+    return false;
+  }
+}
+    
+// проверка на Просто Пользователя
+// короче
+const isUser = (person: Person): person is User => {
+  return person.type === 'user';
+}
+
+// проверка на Гостя
+// еще короче
+const isGuest = (person: Person): person is Guest => person.type === 'guest';
+
+
+// * функция логирования
+// подразумевается три вида акаунтов пользователей
+const logPerson = (person: Person) => {
+  let information: string = '';
+
+  if (isAdmin(person)) {
+    information = person.role;
+  } 
+  if (isUser(person)) {
+    information = person.group;
+  }
+  if (isGuest(person)) {
     information = person.rel;
   }
-
+  
   console.log(` - ${person.name}, ${person.age}, ${information}`);
 };
 
 
+// выводим информацию о пользователях
+console.log('Все пользователи:');
 persons.forEach(logPerson);
 
-console.log('Admins:');
+console.log('\nAdmins:');
 persons.filter(isAdmin).forEach(logPerson);
 
-console.log();
-
-console.log('Users:');
+console.log('\nUsers:');
 persons.filter(isUser).forEach(logPerson);
 
-
-persons.forEach(logPerson);
-
-console.log('Admins:');
-persons.filter(isAdmin).forEach(logPerson);
-
-
-console.log('Users:');
-persons.filter(isUser).forEach(logPerson);
-
-
-
-
-
-const logPerson4 = (person: Person) => {
-  let information: string = '';
-  if (isAdmin(person)) {
-    information = (person as Admin).role; //person.role;
-  }
-  if (isUser(person)) {
-    information = (<User>person).group; //person.group;
-  }
-  console.log(` - ${person.name}, ${person.age}, ${information}`);
-}
-
-
-
-console.log('Admins:');
-persons.filter(isAdmin).forEach(logPerson);
-
-console.log();
-
-console.log('Users:');
-persons.filter(isUser).forEach(logPerson);
+console.log('\nGuest:');
+persons.filter(isGuest).forEach(logPerson);
