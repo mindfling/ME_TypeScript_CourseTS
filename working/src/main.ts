@@ -1,19 +1,27 @@
 console.log('hello lesson4');
 
 class Student {
-  // поля
+  // поля public
   name: string;
   course: string;
+  // поля приватные
+  _module: number;
   
   // конструктор
   constructor(name: string, course: string) {
     this.name = name;
     this.course = course;
+    this._module = 1;
   }
   
   // просто геттер getter
   get info(): string {
     return `${this.name} учится на курсе ${this.course}`;
+  }
+  
+  // сеттер
+  set module(module: number) {
+    this._module = module;
   }
 }
 
