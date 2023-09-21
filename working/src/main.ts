@@ -1,9 +1,21 @@
 console.log('hello lesson4');
 
+// энум особенности
+enum StatusStudent {
+  enrollee, // абитуриент поступающий
+  student,  // поступил и учится
+  graduate, // которые сейчас сдает экз
+  bachelor, // бакалавр сдал все экзам
+}
+
 class Student {
   // поля public
+  id: string;
+  status: StatusStudent;
   name: string;
   course: string;
+  createAt: Date;
+  updatedAt?: Date; // ? необязательное поле
   // поля приватные ! or ?
   _module: number;
   
@@ -12,12 +24,15 @@ class Student {
     this.name = name;
     this.course = course;
     this._module = 1;
+    this.id = Math.random().toString(32).substring(2, 6) + Date.now().toString().substring(9); // случайный id
+    this.status = StatusStudent.enrollee;
+    this.createAt = new Date;
   }
   
   // особенности имени сеттера и геттера и их вызова
   // просто геттер getter
   get info(): string {
-    return `${this.name} учится на курсе ${this.course} на модуле ${this._module}`;
+    return `${this.id} -> ${this.name} учится на курсе "${this.course} на модуле ${this._module}" статус ${this.status} поступил at ${this.createAt}`;
   }
   
   // геттер должен совпадать с переменной и возвращать её тип
@@ -39,3 +54,4 @@ console.log(student1.info);
 student1.module = 23;
 console.log('Модуль изменен на ', student1.module );
 
+console.log('student: ', student1);
