@@ -14,16 +14,18 @@ class Student {
     this._module = 1;
   }
   
+  // особенности имени сеттера и геттера и их вызова
   // просто геттер getter
   get info(): string {
     return `${this.name} учится на курсе ${this.course} на модуле ${this._module}`;
   }
   
+  // геттер должен совпадать с переменной и возвращать её тип
   get module(): number {
     return this._module;
   }
   
-  // сеттер
+  // сеттер должен совпадать с именем переменной и возвращать её тип
   set module(module: number) {
     this._module = module;
   }
