@@ -12,3 +12,9 @@ https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson1
 ### lesson2:
 https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson2
 
+### lesson3:
+https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson3
+
+### lesson4:
+https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson4
+
