@@ -1,0 +1,14 @@
+{
+  "name": "lesson4_task42",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "test": "node ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
