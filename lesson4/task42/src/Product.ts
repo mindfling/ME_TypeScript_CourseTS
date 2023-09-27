@@ -1,28 +1,13 @@
-// интерфейсы
-// all that is public in interface
-
-// * Интерфейс Продукта со всеми public
-interface iProduct {
-  title: string;
-  price: number;
-  logInfo: () => void; // ?
-}
-
-
 // * Класс Продукт
-export class Product implements iProduct {
-  private _title: string;
-  private _price: number;
+
+export class Product {
+  private _title: string; // название товара
+  private _price: number; // цена товара в ру
   
   
   constructor(productTitle: string, productPrice: number) {
     this._title = productTitle;
     this._price = productPrice;
-  }
-  
-  // ?
-  logInfo: () => void = () => {
-    console.log(`Товар ${this._title} по цене ${this._price} ру/кг`);
   }
   
   

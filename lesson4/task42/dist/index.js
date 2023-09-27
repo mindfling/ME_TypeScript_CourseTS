@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Product_1 = require("./Product");
+const SellingSimple_1 = require("./SellingSimple");
+console.log();
+const apple = new Product_1.Product('Яблоки сезонные', 69.99);
+const banana = new Product_1.Product('Бананы загранишные', 99.99);
+console.log({ apple });
+console.log("товар:");
+console.log("название: ", apple.title);
+console.log("цена: ", apple.price, " ру за кг");
+console.log();
+const sellingBanana = new SellingSimple_1.SellingSimple(banana, 24);
+console.log('sellingBanana: ', sellingBanana);
+console.log('цена продукта', sellingBanana.product.title, '\nсумма продажи', sellingBanana.amount, 'кг = ', sellingBanana.getPrice(), 'ру');

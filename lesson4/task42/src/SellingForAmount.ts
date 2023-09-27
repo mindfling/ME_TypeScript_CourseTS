@@ -13,24 +13,8 @@ export class SellingForAmount extends AbstractSelling {
     this.discountQuantaty = discountQuantaty;
   }
 
-  // public money!: number;
-
-  // set amount(amount: number) {
-    
-  // }
-  // get amount(): number {
-    
-  // }
-
-  public compare(otherProduct: Product): boolean {
-    return (this.product.price > otherProduct.price);
-  }
-  
-  // set product(product: Product) {
-    
-  // }
-  // get product(): Product {
-    
+  // public compare(otherProduct: Product): boolean {
+  //   return (this.product.price > otherProduct.price);
   // }
   
   public getPrice: () => string = () => {
@@ -41,4 +25,20 @@ export class SellingForAmount extends AbstractSelling {
       return (this.amount * this.product.price * 0.9).toFixed(2); // -10% discount
     }
   }
+
+
+
+  // public getPrice(): string {
+  //   console.log('Product:\nназвание: ', this._product.title, '\nпо цене: ', this._product.price);
+  //   // todo абстрактный
+  //   return (this._amount * this._product.price).toFixed(2);
+  // }
+  
 }
+
+
+const prod = new Product('Мой продукт', 124);
+console.log('prod: цена', prod.price, " название", prod.title);
+
+const sell = new SellingForAmount(prod, 10, 5);
+console.log('sell: ', sell);

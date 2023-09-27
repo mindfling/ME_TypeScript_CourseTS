@@ -1,7 +1,7 @@
 // todo
 
 import { Product } from "./Product";
-import { AbstractSelling, iSelling } from "./AbstractSelling";
+import { AbstractSelling } from "./AbstractSelling";
 import { SellingSimple } from "./SellingSimple";
 
 console.log();
@@ -23,7 +23,7 @@ console.log();
 
 // console.log({banana});
 // * продаём
-const sellingBanana: iSelling = new SellingSimple(banana, 24);
+const sellingBanana: AbstractSelling = new SellingSimple(banana, 24);
 console.log('sellingBanana: ', sellingBanana);
 console.log('цена продукта', sellingBanana.product.title,
   '\nсумма продажи', sellingBanana.amount, 'кг = ', sellingBanana.getPrice(), 'ру');
