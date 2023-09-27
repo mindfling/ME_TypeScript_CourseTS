@@ -15,7 +15,7 @@ const pusher = new Job_1.Job('Тянутель', Payment.BEGINER);
 console.log('pusher: ', pusher);
 const puller = new Job_1.Job('Толкатель', Payment.MIDDLE);
 console.log('puller: ', puller);
-const volunteer = new Job_1.Job('Доброволец');
+const volunteer = new Job_1.Job('Доброволец', Payment.FREE);
 console.log('volunteer: ', volunteer);
 const personOne = new Person_1.Person('Кирилл', pusher);
 console.log('personOne: ', personOne);

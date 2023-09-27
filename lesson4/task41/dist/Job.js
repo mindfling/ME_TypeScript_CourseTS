@@ -6,13 +6,13 @@ class Job {
     _salary;
     constructor(jobTitle, salary) {
         this._role = jobTitle;
-        this._salary = (salary) ? salary : 0;
+        this._salary = salary;
     }
     get salary() {
         return this._salary;
     }
     work(personName) {
-        console.log(`${personName} сейчас работает в роли ${this._role}`);
+        console.log(`${personName} сейчас работает как ${this._role}`);
     }
 }
 exports.Job = Job;

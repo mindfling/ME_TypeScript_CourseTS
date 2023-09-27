@@ -11,7 +11,7 @@ class Person {
             this._job = job;
         }
         else {
-            this._job = new Job_1.Job('');
+            this._job = new Job_1.Job('', 0);
         }
     }
     set job(job) {
