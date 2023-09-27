@@ -1,50 +1,39 @@
+// импортируем класс работы Job
 import { Job } from "./Job";
 
 
-// * Person class
+// * класс Person
 export class Person {
-  private _job: Job = new Job('work', 32000);
+  private _job: Job;
   private _name: string;
 
   constructor(name: string);
-  constructor(name: string, jobTitle?: string);
-  constructor(name: string, jobTitleOrSalary?: string | number) {
-    if (typeof name === 'string') {
-      this._name = name;
+  constructor(name: string, job: Job);
+  constructor(name: string, job?: Job) {
+    this._name = name;
+    if (job) {
+      this._job = job;
     } else {
-      this._name = 'Иван';
+      this._job = new Job('');
     }
-
-    if (jobTitleOrSalary) {
-      if (typeof jobTitleOrSalary === 'string') {
-        this._job = new Job(jobTitleOrSalary, 67000)
-      } else {
-        this.job = new Job('Программист', jobTitleOrSalary)
-      }
-
-    } else {
-      this._job = new Job('Программист', 67000)
-    }
-    
   }
 
   set job(job: Job) {
     this._job = job;
   }
 
-  get job(): Job {
+  get job(): Job | undefined{
     return this._job;
   }
 
-  getSalary(): number {
+  // расчет зарплаты сотрудника
+  public getSalary(): number {
     return this._job.salary;
   }
 
-  work(): void {
+  // просим сотрудника работать
+  public work(): void {
     this._job.work(this._name);
-    // ?? console.log('do some your professional job' + this._job.work);
   }
 }
-
-
 

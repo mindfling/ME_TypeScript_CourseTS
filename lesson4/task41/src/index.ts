@@ -1,25 +1,36 @@
+// * index
 import { Job } from "./Job";
 import { Person } from "./Person";
 
+export enum Payment {
+  BASE = 0,
+  BEGINER = 12000,
+  MIDDLE = 27000,
+  HIGH = 32000,
+  UPPER = 64000,
+}
 
-console.log('index Job', Job);
-console.log('index Job', Job);
+// * работа на складе
+// обекты работ
+const pusher = new Job('Тянутель', Payment.BEGINER);
+console.log('pusher: ', pusher);
 
+const puller = new Job('Толкатель', Payment.MIDDLE);
+console.log('puller: ', puller);
 
-// * проверка
-/**
- * Для проверки работы приложения
-
-- Создайте 2-3 экземпляра класса Person, назначьте им имя.
-- Создайте несколько объектов типа Job, задав им название профессии и роль.
-- Задайте вашим сотрудникам первоначальные профессии и заставьте их немного поработать.
-- Переквалифицируйте работников на другую профессию.
-
-Person может работать с любым Job, который он получает снаружи.
- */
-const personOne = new Person('Кирилл');
-const personTwo = new Person('Сергей');
-
-
+const volunteer = new Job('Доброволец');
+console.log('volunteer: ', volunteer);
 
 
+// обьекты сотрудников
+const personOne = new Person('Кирилл', pusher);
+console.log('personOne: ', personOne);
+
+const personTwo = new Person('Сергей', puller);
+console.log('personTwo: ', personTwo);
+
+const personThree = new Person('Александр', puller);
+console.log('personThree: ', personThree);
+
+const personFree = new Person('Безработный');
+console.log('personFree: ', personFree);
