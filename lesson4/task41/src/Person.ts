@@ -1,39 +1,44 @@
-// импортируем класс работы Job
+// imports
 import { Job } from "./Job";
 
 
-// * класс Person
+// уровень зарплаты
+enum Salary {
+  BASE = 12000,
+  MIDDLE = 25000,
+  HIGH = 32000,
+}
+
+// * Person class
 export class Person {
   private _job: Job;
   private _name: string;
 
-  constructor(name: string);
-  constructor(name: string, job: Job);
-  constructor(name: string, job?: Job) {
+  constructor(name: string, prof: string) {
     this._name = name;
-    if (job) {
-      this._job = job;
-    } else {
-      this._job = new Job('');
-    }
+    console.log('constructor person name: ', name);
+    this._job = new Job(prof, Salary.BASE);
   }
 
   set job(job: Job) {
     this._job = job;
+    console.log('setter the job', job);
   }
 
-  get job(): Job | undefined{
+  get job(): Job {
+    console.log('this is getter of job');
     return this._job;
   }
 
-  // расчет зарплаты сотрудника
-  public getSalary(): number {
+  getSalary(): number {
     return this._job.salary;
   }
 
-  // просим сотрудника работать
-  public work(): void {
+  work(): void {
     this._job.work(this._name);
+    // ?? console.log('do some your professional job' + this._job.work);
   }
 }
+
+
 
