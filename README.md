@@ -18,3 +18,6 @@ https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson3
 ### lesson4:
 https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson4
 
+- https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson4/lesson4/task41
+
+- https://github.com/mindfling/ME_TypeScript_CourseTS/tree/lesson4/lesson4/task42
