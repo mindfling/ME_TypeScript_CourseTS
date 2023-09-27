@@ -2,8 +2,9 @@
 import { Job } from "./Job";
 import { Person } from "./Person";
 
+// * уровень зарплаты
 export enum Payment {
-  BASE = 0,
+  FREE = 0,
   BEGINER = 12000,
   MIDDLE = 27000,
   HIGH = 32000,
@@ -29,7 +30,7 @@ console.log('personOne: ', personOne);
 const personTwo = new Person('Сергей', puller);
 console.log('personTwo: ', personTwo);
 
-const personThree = new Person('Александр', puller);
+const personThree = new Person('Александр', volunteer);
 console.log('personThree: ', personThree);
 
 const personFree = new Person('Безработный');
