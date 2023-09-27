@@ -5,7 +5,7 @@ const Job_1 = require("./Job");
 const Person_1 = require("./Person");
 var Payment;
 (function (Payment) {
-    Payment[Payment["BASE"] = 0] = "BASE";
+    Payment[Payment["FREE"] = 0] = "FREE";
     Payment[Payment["BEGINER"] = 12000] = "BEGINER";
     Payment[Payment["MIDDLE"] = 27000] = "MIDDLE";
     Payment[Payment["HIGH"] = 32000] = "HIGH";
@@ -21,7 +21,7 @@ const personOne = new Person_1.Person('Кирилл', pusher);
 console.log('personOne: ', personOne);
 const personTwo = new Person_1.Person('Сергей', puller);
 console.log('personTwo: ', personTwo);
-const personThree = new Person_1.Person('Александр', puller);
+const personThree = new Person_1.Person('Александр', volunteer);
 console.log('personThree: ', personThree);
 const personFree = new Person_1.Person('Безработный');
 console.log('personFree: ', personFree);
