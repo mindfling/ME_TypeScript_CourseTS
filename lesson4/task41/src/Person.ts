@@ -2,28 +2,18 @@
 import { Job } from "./Job";
 
 
-// ??? интерфейс ? удалить
-export interface iPerson {
-  job: Job | undefined;
-  getSalary: () => number;
-  work: () => void;
-}
+// * класс Person сотрудник
+export class Person {
+  private _job: Job; // работа
+  private readonly _name: string; // имя не меняется
 
-// * класс Person
-export class Person implements iPerson {
-  private _job: Job;
-  private _name: string;
-
-  // ??? перезагрузка конструкторов
-  constructor(name: string);
-  constructor(name: string, job: Job);
-  // ? реализация
   constructor(name: string, job?: Job) {
     this._name = name;
     if (job) {
       this._job = job;
     } else {
-      this._job = new Job('');
+      // по умолчанию нет работы -> заглушка Пустой Job и зарплата 0
+      this._job = new Job('', 0);
     }
   }
 
@@ -31,7 +21,7 @@ export class Person implements iPerson {
     this._job = job;
   }
 
-  get job(): Job | undefined{
+  get job(): Job {
     return this._job;
   }
 

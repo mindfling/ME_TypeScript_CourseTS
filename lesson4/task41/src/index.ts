@@ -19,7 +19,7 @@ console.log('pusher: ', pusher);
 const puller = new Job('Толкатель', Payment.MIDDLE);
 console.log('puller: ', puller);
 
-const volunteer = new Job('Доброволец');
+const volunteer = new Job('Доброволец', Payment.FREE);
 console.log('volunteer: ', volunteer);
 
 
