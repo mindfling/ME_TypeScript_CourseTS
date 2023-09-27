@@ -17,7 +17,7 @@ class Student {
     _module;
     constructor(name, course) {
         this.name = name;
-        this.course = course;
+        this.course = course || '';
         this._module = 1;
         this.id = Math.random().toString(32).substring(2, 6) + Date.now().toString().substring(9);
         this.status = StatusStudent.enrollee;

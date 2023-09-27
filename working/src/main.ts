@@ -10,19 +10,21 @@ enum StatusStudent {
 
 class Student {
   // поля public
-  id: string;
-  status: StatusStudent;
+  private id: string;
+  private status: StatusStudent;
   name: string;
   course: string;
   createAt: Date;
   updatedAt?: Date; // ? необязательное поле
   // поля приватные ! or ?
-  _module: number;
+  private _module: number;
   
   // конструктор
-  constructor(name: string, course: string) {
+  constructor(name: string);
+  constructor(name: string, course: string);
+  constructor(name: string, course?: string) {
     this.name = name;
-    this.course = course;
+    this.course = course || '';
     this._module = 1;
     this.id = Math.random().toString(32).substring(2, 6) + Date.now().toString().substring(9); // случайный id
     this.status = StatusStudent.enrollee;
