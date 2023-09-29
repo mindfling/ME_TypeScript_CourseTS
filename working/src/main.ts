@@ -2,29 +2,27 @@ console.log('hello lesson4');
 
 // энум особенности
 enum StatusStudent {
-  enrollee, // абитуриент поступающий
-  student,  // поступил и учится
-  graduate, // которые сейчас сдает экз
-  bachelor, // бакалавр сдал все экзам
+  enrollee = 'enrollee', // абитуриент поступающий
+  student = 'student',  // поступил и учится
+  graduate = 'graduate', // которые сейчас сдает экз
+  bachelor = 'bachelor', // бакалавр сдал все экзам
 }
 
 class Student {
   // поля public
-  private id: string;
-  private status: StatusStudent;
+  id: string;
+  status: StatusStudent;
   name: string;
   course: string;
   createAt: Date;
   updatedAt?: Date; // ? необязательное поле
   // поля приватные ! or ?
-  private _module: number;
+  _module: number;
   
   // конструктор
-  constructor(name: string);
-  constructor(name: string, course: string);
-  constructor(name: string, course?: string) {
+  constructor(name: string, course: string) {
     this.name = name;
-    this.course = course || '';
+    this.course = course;
     this._module = 1;
     this.id = Math.random().toString(32).substring(2, 6) + Date.now().toString().substring(9); // случайный id
     this.status = StatusStudent.enrollee;
@@ -68,6 +66,7 @@ console.log('Модуль изменен на ', student1.module );
 console.log('1 student: ', student1);
 
 setTimeout(() => {
+  student1.module = 2;
   student1.changeStatus(StatusStudent.bachelor);
   console.log('timeout 5s student: ', student1);
 }, 5000);
