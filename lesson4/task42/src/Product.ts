@@ -1,18 +1,19 @@
-// * Класс Продукт
+//* OK
+// Класс Продукт
 
 export class Product {
   private _title: string; // название товара
   private _price: number; // цена товара в ру
   
   
-  constructor(productTitle: string, productPrice: number) {
-    this._title = productTitle;
-    this._price = productPrice;
+  constructor(title: string, price: number) {
+    this._title = title;
+    this._price = price;
   }
   
   
   set title(productTitle: string) {
-    this.title = productTitle + '';
+    this.title = productTitle;
   }
   
   get title(): string {
@@ -20,7 +21,7 @@ export class Product {
   }
   
   set price(productPrice: number) {
-    this._price = +productPrice;
+    this._price = productPrice;
   }
   
   get price(): number {
