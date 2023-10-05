@@ -3,9 +3,9 @@ import { AbstractSelling } from "./AbstractSelling";
 import { Product } from "./Product";
 
 
+// наследование абстрактного класса
 export class SellingPercentDiscount extends AbstractSelling {
   private minimalAmount: number;
-
 
   constructor(product: Product, amount: number, minimalAmount: number) {
     super(product, amount);
@@ -14,7 +14,8 @@ export class SellingPercentDiscount extends AbstractSelling {
     this.minimalAmount = minimalAmount;
   }
 
-  public getPrice: () => string = () => {
+  // имплементация абстрактного метода
+  public override getPrice: () => string = () => {
     if (this.amount >= this.minimalAmount) { // условие получения скидки
       return (this.amount * this.product.price * 0.9).toFixed(2); // -10% discount
     } else {
@@ -22,13 +23,3 @@ export class SellingPercentDiscount extends AbstractSelling {
     }
   }
 }
-
-
-/*
-* test
-const prod = new Product('Мой продукт', 124);
-console.log('prod: цена', prod.price, " название", prod.title);
-
-const sell = new SellingPercentDiscount(prod, 10, 5);
-console.log('sell: ', sell);
-*/

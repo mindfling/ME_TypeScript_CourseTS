@@ -1,9 +1,8 @@
-//* OK
-// Класс Продукт
+// * Класс Продукт товар
 
 export class Product {
   private _title: string; // название товара
-  private _price: number; // цена товара в ру
+  private _price: number; // цена товара в руб
   
   
   constructor(title: string, price: number) {

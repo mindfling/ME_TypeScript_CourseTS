@@ -7,7 +7,7 @@ export class SellingTenDiscount extends AbstractSelling {
   private money: number = 0;
 
   // переопределяем
-  public getPrice: () => string = () => {
+  public override getPrice: () => string = () => {
     this.money = this.amount * this.product.price;
   
     if (this.money > 10) {
@@ -20,15 +20,3 @@ export class SellingTenDiscount extends AbstractSelling {
     // возвращает строку от числа с 2 знаками после запятой
   }
 }
-
-
-/*
- * *test
-  // const product = new Product('Продукт', 256)
-  const sellTen = new SellingTenDiscount(new Product('Продукт', 256), 25);
-
-  sellTen.product.title;
-  sellTen.product.price;
-  sellTen.amount;
-  sellTen.getPrice();
-*/
