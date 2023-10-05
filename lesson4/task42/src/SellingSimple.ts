@@ -11,7 +11,6 @@ export class SellingSimple extends AbstractSelling {
       // возвращает строку от числа с 2 знаками после запятой
       return (this.money).toFixed(2);
   }
-
 }
 
 /*
