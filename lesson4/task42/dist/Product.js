@@ -4,18 +4,18 @@ exports.Product = void 0;
 class Product {
     _title;
     _price;
-    constructor(productTitle, productPrice) {
-        this._title = productTitle;
-        this._price = productPrice;
+    constructor(title, price) {
+        this._title = title;
+        this._price = price;
     }
     set title(productTitle) {
-        this.title = productTitle + '';
+        this.title = productTitle;
     }
     get title() {
         return this._title;
     }
     set price(productPrice) {
-        this._price = +productPrice;
+        this._price = productPrice;
     }
     get price() {
         return this._price;

@@ -6,16 +6,7 @@ class AbstractSelling {
     _amount;
     constructor(sellingProduct, sellingAmount) {
         this._product = sellingProduct;
-        this._amount = +sellingAmount;
-    }
-    compare(otherProduct) {
-        if (this._product.price < otherProduct.price) {
-            return 1;
-        }
-        if (this._product.price > otherProduct.price) {
-            return -1;
-        }
-        return 0;
+        this._amount = sellingAmount;
     }
     set product(product) {
         this._product = product;
@@ -28,6 +19,15 @@ class AbstractSelling {
     }
     get amount() {
         return this._amount;
+    }
+    compare(otherProduct) {
+        if (this._product.price < otherProduct.price) {
+            return 1;
+        }
+        if (this._product.price > otherProduct.price) {
+            return -1;
+        }
+        return 0;
     }
 }
 exports.AbstractSelling = AbstractSelling;
