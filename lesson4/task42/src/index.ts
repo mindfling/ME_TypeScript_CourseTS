@@ -34,7 +34,7 @@ const listOfSellings: AbstractSelling[] = [
   new SellingPercentDiscount(apple, 2, 10),
   new SellingPercentDiscount(banana, 5, 10),
   new SellingPercentDiscount(tomato, 15, 10),
-  new SellingPercentDiscount(onion, 7, 10),
+  new SellingPercentDiscount(onion, 20, 10),
 ]
 
 console.log('unsorted ListOfSellings: ', listOfSellings);
@@ -42,4 +42,21 @@ console.log();
 
 // todo Question КАК сделать стортировку массива ?
 // console.log('sorted ListOfSellings:', Array.sort(AbstractSelling.compare));
-  
+
+
+listOfSellings.sort((a: AbstractSelling, b: AbstractSelling): number => {
+  return (a.product.price - b.product.price); // ascending 1,2,3...
+})
+console.log('SORTED ascending ListOfSellings: ', listOfSellings);
+
+/*
+listOfSellings.sort((a: AbstractSelling, b: AbstractSelling): number => {
+  return -(+a.getPrice() - +b.getPrice()); // desscending ...3,2,1
+})
+console.log('SORTED по стоимости getPrice ListOfSellings: ', listOfSellings);
+*/
+
+listOfSellings.sort(AbstractSelling.compare)
+console.log('SORTED по стоимости AbstractSelling.compare ListOfSellings: ', listOfSellings);
+
+
