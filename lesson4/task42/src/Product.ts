@@ -20,6 +20,7 @@ export class Product {
     return this._title;
   }
   
+  
   set price(productPrice: number) {
     this._price = productPrice;
   }
