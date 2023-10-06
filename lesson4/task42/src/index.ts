@@ -13,19 +13,31 @@ const apple: Product = new Product('Яблоки сезонные', 69.99);
 const banana: Product = new Product('Бананы загранишные', 99.99);
 const tomato: Product = new Product('Томаты помидоры', 59.00);
 const onion: Product = new Product('Лук репчаты', 32.00);
-
+const testFruit: Product = new Product('Фрукт', 100);
+const testVegetable: Product = new Product('Овощ', 100);
 
 console.log({ apple });
 console.log({ banana });
 console.log({ tomato });
 console.log({ onion });
-
+console.log({ testFruit });
+console.log({ testVegetable });
+console.log();
 
 // * продаём
 const sellingApple: AbstractSelling = new SellingTenDiscount(apple, 10);
 const sellingBanana: AbstractSelling = new SellingSimple(banana, 25);
 const sellingOnion: AbstractSelling = new SellingPercentDiscount(onion, 15, 10);
+const sellingFruit: AbstractSelling = new SellingTenDiscount(testFruit, 3);
+const sellingVegetable: AbstractSelling = new SellingPercentDiscount(testVegetable, 5, 3);
+console.log('sellingApple: ', sellingApple);
+console.log('sellingBanana: ', sellingBanana);
+console.log('sellingOnion: ', sellingOnion);
+console.log('sellingFruit: ', sellingFruit, 'продажа: ', sellingFruit.getPrice());
+console.log('sellingVegetable: ', sellingVegetable, 'продажа: ', sellingVegetable.getPrice());
+console.log();
 
+// * массив для сортировки
 const listOfSellings: AbstractSelling[] = [
   new SellingTenDiscount(apple, 10),
   new SellingTenDiscount(banana, 5),
@@ -40,14 +52,14 @@ const listOfSellings: AbstractSelling[] = [
 console.log('unsorted ListOfSellings: ', listOfSellings);
 console.log();
 
-// todo Question КАК сделать стортировку массива ?
+// todo Question КАК сделать ПРАВИЛЬНУЮ сортировку массива ?
 // console.log('sorted ListOfSellings:', Array.sort(AbstractSelling.compare));
 
 
-listOfSellings.sort((a: AbstractSelling, b: AbstractSelling): number => {
-  return (a.product.price - b.product.price); // ascending 1,2,3...
-})
-console.log('SORTED ascending ListOfSellings: ', listOfSellings);
+// listOfSellings.sort((a: AbstractSelling, b: AbstractSelling): number => {
+//   return (a.product.price - b.product.price); // ascending 1,2,3...
+// })
+// console.log('SORTED ascending ListOfSellings: ', listOfSellings);
 
 /*
 listOfSellings.sort((a: AbstractSelling, b: AbstractSelling): number => {
@@ -57,6 +69,6 @@ console.log('SORTED по стоимости getPrice ListOfSellings: ', listOfSe
 */
 
 listOfSellings.sort(AbstractSelling.compare)
-console.log('SORTED по стоимости AbstractSelling.compare ListOfSellings: ', listOfSellings);
+console.log('SORTED по стоимости по убыванию AbstractSelling.compare ListOfSellings: ', listOfSellings);
 
 
