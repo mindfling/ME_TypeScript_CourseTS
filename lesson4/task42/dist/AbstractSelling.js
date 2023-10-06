@@ -20,14 +20,8 @@ class AbstractSelling {
     get amount() {
         return this._amount;
     }
-    compare(otherProduct) {
-        if (this._product.price < otherProduct.price) {
-            return 1;
-        }
-        if (this._product.price > otherProduct.price) {
-            return -1;
-        }
-        return 0;
-    }
+    static compare = (first, second) => {
+        return (second.getPrice() - first.getPrice());
+    };
 }
 exports.AbstractSelling = AbstractSelling;

@@ -6,7 +6,7 @@ class SellingSimple extends AbstractSelling_1.AbstractSelling {
     money = 0;
     getPrice = () => {
         this.money = this.amount * this.product.price;
-        return (this.money).toFixed(2);
+        return parseFloat(this.money.toFixed(2));
     };
 }
 exports.SellingSimple = SellingSimple;
