@@ -31,19 +31,27 @@ export abstract class AbstractSelling {
 
 
   // * абстрактный метод должен быть имплеменитирован в дочерних классах
-  // ? вопрос ? что должен возвращать string или number ?
+  // что должен возвращать string или number ?
   public abstract getPrice: () => number;
 
 
   // * функция сравнения для сортировки по убыванию ...3,2,1
-  public static compare = (first: AbstractSelling, second: AbstractSelling): number => {
+  // функция сортировки по общей стоимости закупки
+  public compare = (first: AbstractSelling, second: AbstractSelling): number => {
     return (second.getPrice() - first.getPrice());
+  }
+  
+  
+  // функция сортировки по цене продукта
+  public comparePrice = (first: AbstractSelling, second: AbstractSelling): number => {
+    return (second.product.price - first.product.price);
   }
 
 
   // ? какие аргументы должны быть у .compare и что должна возвращать ?
-  /*
-  public compare(otherProduct: Product): number {
+  // по условию Задание 2 должно быть так
+  // но логики я тут не вижу
+  public compareOne(otherProduct: Product): number {
     if (this._product.price < otherProduct.price) {
       return 1;
     }
@@ -52,5 +60,6 @@ export abstract class AbstractSelling {
     }
     return 0;
   }
-  */
+
+
 }

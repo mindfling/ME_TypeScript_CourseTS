@@ -1,22 +1,23 @@
-// не сорт масс чис
-const unsorted: number[] = [251,26,26,30,215,25,0,125]
-console.log('unsorted: ', unsorted);
+
+const unsorted: number[] = [251, 26, 26, 30, 215, 25, 0, 125]
 
 
-const defsort: number[] = unsorted.sort();
-console.log('defsort: ', defsort);
+const defaultSorted: number[] = unsorted.sort();
 
-const sortedfs: number[] = unsorted.sort((first: number, second: number) => (first - second)); // ascending
-console.log('sorted: ', sortedfs);
+
+const sortedNumbers: number[] = unsorted.sort((first: number, second: number) =>
+  (first - second)); // повозрастанию
+
 
 const sorted: number[] = unsorted.sort((first: number, second: number) => {
   if (first > second) {
     return 1;
-  }
-  if (first < second) {
+  } else if (first < second) {
     return -1;
   }
   return 0;
-}); // ascending is by default sord order ->
-console.log('sorted: ', sorted);
+});
+
+
+
 
