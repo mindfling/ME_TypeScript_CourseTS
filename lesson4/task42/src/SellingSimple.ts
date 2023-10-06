@@ -1,14 +1,13 @@
 // * простой класс для простой продажи
 import { AbstractSelling } from "./AbstractSelling";
-// import { Product } from "./Product";
 
 
 export class SellingSimple extends AbstractSelling {
   private money: number = 0; // поумолчанию 0
 
-  public getPrice: () => string = () => {
+  public override getPrice: () => number = () => {
     this.money = this.amount * this.product.price;
     // возвращает строку от числа с 2 знаками после запятой
-    return (this.money).toFixed(2);
+    return parseFloat(this.money.toFixed(2));
   }
 }

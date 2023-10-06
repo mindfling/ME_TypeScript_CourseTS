@@ -5,21 +5,23 @@ import { Product } from "./Product";
 
 // наследование абстрактного класса
 export class SellingPercentDiscount extends AbstractSelling {
-  private minimalAmount: number;
+  private money: number = 0;
+  private _minimalAmount: number;
 
   constructor(product: Product, amount: number, minimalAmount: number) {
     super(product, amount);
     this.product = product
     this.amount = amount;
-    this.minimalAmount = minimalAmount;
+    this._minimalAmount = minimalAmount;
   }
 
   // имплементация абстрактного метода
-  public override getPrice: () => string = () => {
-    if (this.amount >= this.minimalAmount) { // условие получения скидки
-      return (this.amount * this.product.price * 0.9).toFixed(2); // -10% discount
+  public override getPrice = () => {
+    if (this.amount >= this._minimalAmount) { // условие получения скидки
+      this.money = this.amount * this.product.price * 0.9; // -10% discount
     } else {
-      return (this.amount * this.product.price).toFixed(2);
+      this.money = this.amount * this.product.price;
     }
+    return parseFloat(this.money.toFixed(2));
   }
 }

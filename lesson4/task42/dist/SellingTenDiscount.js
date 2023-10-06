@@ -7,11 +7,9 @@ class SellingTenDiscount extends AbstractSelling_1.AbstractSelling {
     getPrice = () => {
         this.money = this.amount * this.product.price;
         if (this.money > 10) {
-            return (this.money - 10).toFixed(2);
+            this.money = this.money - 10;
         }
-        else {
-            return (this.money).toFixed(2);
-        }
+        return parseFloat(this.money.toFixed(2));
     };
 }
 exports.SellingTenDiscount = SellingTenDiscount;

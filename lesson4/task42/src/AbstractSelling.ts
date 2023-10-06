@@ -2,7 +2,7 @@
 import { Product } from "./Product";
 
 
-// абстрактный класс
+// * абстрактный класс
 export abstract class AbstractSelling {
   private _product: Product;
   private _amount: number;
@@ -30,13 +30,19 @@ export abstract class AbstractSelling {
   }
 
 
-  // функция сравнения для сортировки по убыванию ...3,2,1
-  public static compare = (a: AbstractSelling, b: AbstractSelling): number => {
-    return (parseFloat(b.getPrice()) - parseFloat(a.getPrice()));
-  } 
+  // * абстрактный метод должен быть имплеменитирован в дочерних классах
+  // ? вопрос ? что должен возвращать string или number ?
+  public abstract getPrice: () => number;
 
+
+  // * функция сравнения для сортировки по убыванию ...3,2,1
+  public static compare = (first: AbstractSelling, second: AbstractSelling): number => {
+    return (second.getPrice() - first.getPrice());
+  }
+
+
+  // ? какие аргументы должны быть у .compare и что должна возвращать ?
   /*
-  // * comparing func для сортировки
   public compare(otherProduct: Product): number {
     if (this._product.price < otherProduct.price) {
       return 1;
@@ -47,7 +53,4 @@ export abstract class AbstractSelling {
     return 0;
   }
   */
-
-  // * абстрактный метод должен быть имплеменитирован в дочерних классах
-  public abstract getPrice: () => string;
 }
