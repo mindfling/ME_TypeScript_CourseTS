@@ -1,0 +1,14 @@
+{
+  "name": "lesson5_task51",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "test": "node ./dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
