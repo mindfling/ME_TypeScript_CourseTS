@@ -1,5 +1,5 @@
 import { Students } from "./Students";
-import { User } from "./Users";
+import { User } from "./User";
 
 const userOne: User = new User('Dim', 'Endeve', 21); // пользователь
 
@@ -8,22 +8,18 @@ console.log('empty list: ', list);
 console.log();
 
 const idOne = list.add(userOne)
-console.log('one list: ', list);
-// console.log('idOne: ', idOne);
+console.log('one list: ', list.userList);
 console.log();
-
 
 list.add(new User('Alex', 'Simpson', 22));
-// list.add(new User('Enne', 'Simpson', 20));
-console.log('three list: ', list);
-
-console.log();console.log();console.log();
-
-console.log('list before remove: ', list);
+list.add(new User('Enne', 'Simpson', 20));
+console.log('three list: ', list.userList);
 console.log();
+
+console.log('list before remove: ', list.userList);
+console.log();
+
 console.log('remove userOne with id', list.userList[0].id);
 list.remove(idOne);
 
-console.log('list after remove: ', list);
-console.log(list.userList);
-console.log(list.userList.length);
+console.log('list after remove: ', list.userList);

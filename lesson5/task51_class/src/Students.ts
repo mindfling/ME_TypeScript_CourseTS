@@ -1,4 +1,5 @@
-import { User, Users } from "./Users";
+import { User } from "./User";
+import { Users } from "./Users";
 
 
 // список студентов
@@ -12,11 +13,11 @@ export class Students extends Users {
     this._year = year;
     this._specialty = specialty;
   }
-  
+
   get year(): number {
     return this._year;
   }
-  
+
   get specialty(): string {
     return this._specialty;
   }

@@ -1,15 +1,20 @@
-import { User, Users } from "./Users";
+import { Users } from "./Users";
 
 
 // список сотрудников
 class Employees extends Users {
-  private post: string; // должность сотрудников
+  private _post: string; // должность сотрудников
 
-  constructor(post: string) {
+  constructor(position: string) {
     super();
-    this.post = post;
-    
+    this._post = position; // должность
   }
-  
-}
 
+  public get post(): string {
+    return this._post;
+  }
+
+  public set post(position: string) {
+    this._post = position;
+  }
+}
