@@ -1,1 +1,18 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Students_1 = require("./Students");
+const Users_1 = require("./Users");
+const userOne = new Users_1.User('Dim', 'Endeve', 21);
+console.log('userOne: ', userOne);
+const list = new Students_1.Students([], 2, 'Sci Fi');
+console.log('list: ', list);
+const idOne = list.add(userOne);
+console.log('idOne: ', idOne);
+console.log('list: ', list);
+list.add(new Users_1.User('Alex', 'Simpson', 22));
+list.add(new Users_1.User('Enne', 'Simpson', 20));
+console.log('list: ', list);
+console.log();
+console.log(list.year, list.specialty, list.userList[0], list.userList[0].id);
+console.log(list.remove(idOne));
+console.log('list: ', list);

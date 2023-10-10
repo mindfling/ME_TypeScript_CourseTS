@@ -7,10 +7,4 @@ class Employees extends Users_1.Users {
         super();
         this.post = post;
     }
-    remove(id) {
-        return false;
-    }
-    get(id) {
-        return null;
-    }
 }
