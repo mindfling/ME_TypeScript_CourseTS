@@ -3,7 +3,7 @@ import { Users } from "./Users";
 
 
 // список сотрудников
-class Employees extends Users {
+export class Employees extends Users {
   private _post: string; // должность сотрудников
 
   constructor(list: User[], position: string) {
