@@ -1,22 +1,29 @@
 import { Students } from "./Students";
 import { User } from "./Users";
 
-const userOne: User = new User('Dim', 'Endeve', 21);
-console.log('userOne: ', userOne);
+const userOne: User = new User('Dim', 'Endeve', 21); // пользователь
 
-
-const list: Students = new Students([], 2, 'Sci Fi');
-console.log('list: ', list);
+const list: Students = new Students([], 2, 'Sci Fi course'); // список пользователей
+console.log('empty list: ', list);
+console.log();
 
 const idOne = list.add(userOne)
-console.log('idOne: ', idOne);
-console.log('list: ', list);
+console.log('one list: ', list);
+// console.log('idOne: ', idOne);
+console.log();
+
 
 list.add(new User('Alex', 'Simpson', 22));
-list.add(new User('Enne', 'Simpson', 20));
-console.log('list: ', list);
-console.log();
-console.log(list.year, list.specialty, list.userList[0], list.userList[0].id);
+// list.add(new User('Enne', 'Simpson', 20));
+console.log('three list: ', list);
 
-console.log(list.remove(idOne));
-console.log('list: ', list);
+console.log();console.log();console.log();
+
+console.log('list before remove: ', list);
+console.log();
+console.log('remove userOne with id', list.userList[0].id);
+list.remove(idOne);
+
+console.log('list after remove: ', list);
+console.log(list.userList);
+console.log(list.userList.length);
