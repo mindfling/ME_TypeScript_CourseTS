@@ -11,9 +11,16 @@ export abstract class Users {
   }
 
   // удалить обкт пользователя с данным id
-  public remove(id: string): User[] {
-    this.userList = this.userList.filter((item: User) => item.id !== id); // update list
-    return this.userList; // возвращаем обновленный список
+  public remove(id: string): boolean {
+    const oldLen: number = this.userList.length;
+    const newList: Array<User> = this.userList.filter((item: User) => item.id !== id); // update list
+    const newLen = newList.length;
+    if (oldLen !== newLen) {
+      this.userList = newList; // заменяем мас
+      return true;  // е. длина мас изменилась то пользователь удален
+    } else {
+      return false; // е. длина мас не изменилась то пользователь не удален
+    }
   }
 
   // получаем пользовавтеля по его уникальному id

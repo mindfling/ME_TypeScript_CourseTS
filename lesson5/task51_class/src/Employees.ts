@@ -1,3 +1,4 @@
+import { User } from "./User";
 import { Users } from "./Users";
 
 
@@ -5,8 +6,9 @@ import { Users } from "./Users";
 class Employees extends Users {
   private _post: string; // должность сотрудников
 
-  constructor(position: string) {
+  constructor(list: User[], position: string) {
     super();
+    this.userList = list;
     this._post = position; // должность
   }
 

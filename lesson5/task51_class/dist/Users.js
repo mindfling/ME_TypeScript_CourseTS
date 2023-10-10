@@ -8,8 +8,16 @@ class Users {
         return this.userList[this.userList.length - 1].id;
     }
     remove(id) {
-        this.userList = this.userList.filter((item) => item.id !== id);
-        return this.userList;
+        const oldLen = this.userList.length;
+        const newList = this.userList.filter((item) => item.id !== id);
+        const newLen = newList.length;
+        if (oldLen !== newLen) {
+            this.userList = newList;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     get(id) {
         const users = this.userList.filter((item) => item.id === id);
