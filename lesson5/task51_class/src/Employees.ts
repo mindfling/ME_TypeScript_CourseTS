@@ -11,12 +11,5 @@ class Employees extends Users {
     
   }
   
-  public override remove(id: string): boolean {
-    return false;
-  }
-  
-  public override get(id: string): User | null {
-    return null;
-  }
 }
 

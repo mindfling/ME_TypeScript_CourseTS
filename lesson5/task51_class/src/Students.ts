@@ -3,14 +3,21 @@ import { User, Users } from "./Users";
 
 // список студентов
 export class Students extends Users {
-  private year: number | undefined; // номер курса
-  private specialty!: string; // сециальность
-  
-  public override remove(id: string): boolean {
-    return false;
+  private _year: number; // номер курса
+  private _specialty: string; // сециальность
+
+  constructor(list: User[], year: number, specialty: string) {
+    super();
+    this.userList = list;
+    this._year = year;
+    this._specialty = specialty;
   }
   
-  public override get(id: string): User | null {
-    return null;
+  get year(): number {
+    return this._year;
+  }
+  
+  get specialty(): string {
+    return this._specialty;
   }
 }
