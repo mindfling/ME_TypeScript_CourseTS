@@ -1,18 +1,21 @@
-import { User, Users } from "./User";
+// производный класс Студент
 
+import { iUser, Users } from "./Users";
 
-interface iStudent extends User {
+// студент
+export interface iStudent extends iUser {
   year: number;
   specialty: string;
 }
 
-class Student implements iStudent {
+export class Student implements iUser {
   id: string;
   firstname: string;
   surname: string;
   age: number;
   year: number;
   specialty: string;
+  
   constructor(
     firstname: string,
     surname: string,
@@ -20,7 +23,7 @@ class Student implements iStudent {
     year: number,
     specialty: string,
   ) {
-    this.id = `id_${Math.random().toString(32).substring(2, 10)}_0x${Date.now().toString(16).substring(3)}`;
+    this.id = `id_${Math.random().toString(32).substring(2, 10)}_0x${Date.now().toString(16).substring(3, 11)}`;
     this.firstname = firstname;
     this.surname = surname;
     this.age = age;
@@ -29,7 +32,7 @@ class Student implements iStudent {
   }
 }
 
-class Students extends Users<iStudent> {
+export class Students extends Users<iStudent> {
   constructor() {
     super(); // вызываем супер конструктор по умолч
   }
