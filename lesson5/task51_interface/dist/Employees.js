@@ -19,10 +19,7 @@ class Employee {
 exports.Employee = Employee;
 class Employees extends Users_1.Users {
     constructor() {
-        console.log('EMPLOY CONSTRUCTOR');
         super();
     }
 }
 exports.Employees = Employees;
-const e = new Employees();
-console.log('EMPLOYEES', e.userList);

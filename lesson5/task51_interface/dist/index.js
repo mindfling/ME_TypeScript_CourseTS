@@ -1,11 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Employees_1 = require("./Employees");
 const Students_1 = require("./Students");
 const studentsList = new Students_1.Students();
 console.log('studentsList: ', studentsList);
 studentsList.add({
-    id: 'id1234',
+    id: 'id768578',
     firstname: 'Dimone',
     surname: 'Endevie',
     age: 32,
@@ -23,6 +22,10 @@ studentsList.add({
 console.log('userList ', studentsList.userList);
 studentsList.add(new Students_1.Student('Дмитрий', 'Ендевий', 33, 3, 'Компьютерные науки'));
 studentsList.add(new Students_1.Student('Владимир', 'Васильев', 29, 1, 'Компьютерные науки'));
-studentsList.add(new Students_1.Student('Владимир', 'Васильев', 31, 1, 'Физикеские технологии'));
-console.log('userList ', studentsList.userList);
-const e = new Employees_1.Employees();
+studentsList.add(new Students_1.Student('Владимир', 'Васильев', 31, 2, 'Физикеские технологии'));
+studentsList.add(new Students_1.Student('Александр', 'Александров', 38, 4, 'Физикеские технологии'));
+console.log('userList ', studentsList.userList, 'len =', studentsList.userList.length);
+let del = 'id7685';
+console.log('delete', del);
+console.log(studentsList.remove(del));
+console.log('after del', studentsList.userList, 'len =', studentsList.userList.length);

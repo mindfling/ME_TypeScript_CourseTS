@@ -23,5 +23,13 @@ class Students extends Users_1.Users {
     constructor() {
         super();
     }
+    remove(id) {
+        const index = this.userList.findIndex((user) => user.id === id);
+        if (index > -1) {
+            this.userList.splice(index, 1);
+            return true;
+        }
+        return false;
+    }
 }
 exports.Students = Students;

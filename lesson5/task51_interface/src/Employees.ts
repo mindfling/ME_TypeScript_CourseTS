@@ -21,6 +21,7 @@ export class Employee implements iUser {
     surname: string,
     age: number,
     post: string,
+    
   ) {
     this.id = `id_${Math.random().toString(32).substring(2, 10)}_0x${Date.now().toString(16).substring(1, 11)}`;
     this.firstname = firstname;
@@ -32,12 +33,6 @@ export class Employee implements iUser {
 
 export class Employees extends Users<iEmployee> {
   constructor() {
-    console.log('EMPLOY CONSTRUCTOR');
     super();
   }
 }
-
-
-const e: Employees = new Employees()
-
-console.log('EMPLOYEES', e.userList)

@@ -8,7 +8,7 @@ const studentsList: Students = new Students();
 console.log('studentsList: ', studentsList);
 
 studentsList.add({
-  id: 'id1234',
+  id: 'id768578',
   firstname: 'Dimone',
   surname: 'Endevie',
   age: 32,
@@ -36,9 +36,17 @@ studentsList.add(new Student('Владимир',
     'Компьютерные науки'));
 studentsList.add(new Student('Владимир',
     'Васильев',
-    31, 1,
+    31, 2,
+    'Физикеские технологии'));
+studentsList.add(new Student('Александр',
+    'Александров',
+    38, 4,
     'Физикеские технологии'));
 
-console.log('userList ', studentsList.userList);
+console.log('userList ', studentsList.userList, 'len =', studentsList.userList.length);
+let del = 'id7685'
+console.log('delete', del);
 
-const e: Employees = new Employees()
+console.log(studentsList.remove(del))
+console.log('after del', studentsList.userList, 'len =', studentsList.userList.length);
+
