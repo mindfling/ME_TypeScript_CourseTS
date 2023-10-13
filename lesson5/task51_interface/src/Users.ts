@@ -32,16 +32,23 @@ export abstract class Users<T extends iUser> {
   }
 
   /**
-   * sorted() сортируем по возрасту пользователя
+   * sorted() по умолчанию сортируем пользователей по возрасту
    * @param descending 
-   * true -> поубыванию возраста,
    * false -> по возрастанию 1,2,3..
+   * true -> поубыванию возраста,
    */
   public sorted(descending: boolean | undefined): Array<T> {
-    this._userList = this._userList.sort((a: T, b: T) => {
-        console.log(!!descending, (!!descending) ? 'поубыванию' : 'по возрастанию');
-        return !!descending ? (b.age - a.age) : (a.age - b.age);
-      });
+    this._userList = this._userList.sort((a: T, b: T) =>
+      !!descending ? (b.age - a.age) : (a.age - b.age));
     return this._userList;
+  }
+
+  /**
+   * logPerson() функция логирования
+   */
+  public logPerson() {
+    this._userList.forEach((item: T, i: number) => {
+      console.log(`${i}  - ${item.age} лет\t - ${item.firstname}\t ${item.surname},\t ${item.id}`);
+    });
   }
 }
