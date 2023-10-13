@@ -1,42 +1,8 @@
-// производный класс Студент
-
 import { Users } from "./Users";
 import { iStudent } from "./istudent";
-import { getRandomID } from "./utils";
 
-// * класс студент
-export class Student implements iStudent {
-  private _id: string;
 
-  firstname: string;
-  surname: string;
-  age: number;
-  year: number;
-  specialty: string;
-  
-  public get id(): string {
-    return this._id;
-  }
-  public set id(value: string) {
-    this._id = value;
-  }
-  
-  constructor(
-    firstname: string,
-    surname: string,
-    age: number,
-    year: number,
-    specialty: string,
-  ) {
-    this._id = getRandomID();
-    this.firstname = firstname;
-    this.surname = surname;
-    this.age = age;
-    this.year = year;
-    this.specialty = specialty;
-  }
-}
-
+// * класс список студентов
 export class Students extends Users<iStudent> {
   constructor() {
     super(); // вызываем супер конструктор по умолч

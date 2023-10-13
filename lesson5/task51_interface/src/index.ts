@@ -1,9 +1,10 @@
 // * lesson5 task51
 
-import { Employees } from "./Employees";
-import { Student, Students } from "./Students";
+import { Student } from "./Student";
+import { Students } from "./Students";
 import { getRandomInt } from "./utils";
 
+// * test studentList
 
 const studentsList: Students = new Students();
 // console.log('studentsList: ', studentsList);
@@ -11,7 +12,7 @@ const studentsList: Students = new Students();
 // * test add()
 
 studentsList.add(new Student('Dimone', 'Endevie', 25, 2, 'Computer Sci'));
-studentsList.add(new Student('Vladis', 'Smidt', 21, 1, 'Sci Fi'));
+studentsList.add(new Student('Vladis', 'Usaraliscas', 21, 1, 'Sci Fi'));
 studentsList.add(new Student('Дмитрий',
   'Ендевий',
   33, 3,
@@ -46,11 +47,10 @@ console.log('userList ПОСЛЕ СОРТИРОВКИ по возрастани�
 studentsList.logPerson();
 
 // * test remove()
-const delindex: number = getRandomInt(0, studentsList.userList.length);
+const delindex: number = getRandomInt(0, studentsList.userList.length - 1);
 const delid: string = studentsList.userList[delindex].id;
 
 console.log();
 console.log('will remove user', delindex, studentsList.get(delid), 'with id =', delid);
 studentsList.remove(delid);
 studentsList.logPerson();
-console.log();

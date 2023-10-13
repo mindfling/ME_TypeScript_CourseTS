@@ -1,9 +1,13 @@
 import { iUser } from "./iuser";
 
 
-// * общий Пользователь 
+// * общий список пользователей
 export abstract class Users<T extends iUser> {
-  private _userList: Array<T> = []; //
+  private _userList: Array<T> //
+
+  constructor() {
+    this._userList = [];
+  }
 
   public get userList(): T[] {
     return this._userList;
