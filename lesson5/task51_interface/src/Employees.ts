@@ -1,6 +1,7 @@
 // производный класс Студент
 
-import { iUser, Users } from "./Users";
+import { Users } from "./Users";
+import { iUser } from "./iuser";
 
 // работник
 export interface iEmployee extends iUser {

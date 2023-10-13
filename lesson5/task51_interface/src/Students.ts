@@ -1,21 +1,26 @@
 // производный класс Студент
 
-import { iUser, Users } from "./Users";
+import { Users } from "./Users";
+import { iStudent } from "./istudent";
+import { getRandomID } from "./utils";
 
-// студент
-export interface iStudent extends iUser {
-  year: number;
-  specialty: string;
-}
+// * класс студент
+export class Student implements iStudent {
+  private _id: string;
 
-export class Student implements iUser {
-  id: string;
   firstname: string;
   surname: string;
   age: number;
   year: number;
   specialty: string;
-
+  
+  public get id(): string {
+    return this._id;
+  }
+  public set id(value: string) {
+    this._id = value;
+  }
+  
   constructor(
     firstname: string,
     surname: string,
@@ -23,7 +28,7 @@ export class Student implements iUser {
     year: number,
     specialty: string,
   ) {
-    this.id = `id_${Math.random().toString(32).substring(2, 10)}_0x${Date.now().toString(16).substring(3, 11)}`;
+    this._id = getRandomID();
     this.firstname = firstname;
     this.surname = surname;
     this.age = age;

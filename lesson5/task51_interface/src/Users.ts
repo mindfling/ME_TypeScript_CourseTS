@@ -1,13 +1,7 @@
+import { iUser } from "./iuser";
+
+
 // * общий Пользователь 
-
-export interface iUser {
-  id: string;
-  firstname: string;
-  surname: string;
-  age: number;
-}
-
-
 export abstract class Users<T extends iUser> {
   private _userList: Array<T> = []; //
 
@@ -36,6 +30,18 @@ export abstract class Users<T extends iUser> {
         user.id === id);
     return users.length > 0 ? users[0] : null;
   }
+
+  /**
+   * sorted() сортируем по возрасту пользователя
+   * @param descending 
+   * true -> поубыванию возраста,
+   * false -> по возрастанию 1,2,3..
+   */
+  public sorted(descending: boolean | undefined): Array<T> {
+    this._userList = this._userList.sort((a: T, b: T) => {
+        console.log(!!descending, (!!descending) ? 'поубыванию' : 'по возрастанию');
+        return !!descending ? (b.age - a.age) : (a.age - b.age);
+      });
+    return this._userList;
+  }
 }
-
-
