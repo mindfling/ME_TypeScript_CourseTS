@@ -7,7 +7,7 @@ export class Students extends Users {
   private _year: number; // номер курса
   private _specialty: string; // сециальность
 
-  constructor(list: User[], year: number, specialty: string) {
+  constructor(list: Array<User>, year: number, specialty: string) {
     super();
     this.userList = list;
     this._year = year;

@@ -1,4 +1,6 @@
-// класс пользователь
+import { getRandomID } from "./utils";
+
+// * класс пользователь
 
 export class User {
   private _id: string; // однозначный уникальный идентификатор пользователя
@@ -11,7 +13,7 @@ export class User {
     surname: string,
     age: number,
   ) {
-    this._id = `id${Math.random().toString(32).substring(2, 10)}_${Date.now().toString(16)}`;
+    this._id = getRandomID();
     this._firstname = firstname;
     this._surname = surname;
     this._age = age;
