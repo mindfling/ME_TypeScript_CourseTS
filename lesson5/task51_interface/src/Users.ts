@@ -12,6 +12,10 @@ export abstract class Users<T extends IUser> {
     return this._userList;
   }
 
+  public set userList(list: Array<T>) {
+    this._userList = list;
+  }
+
   //
   public add(user: T) {
     this._userList.push(user);
