@@ -53,7 +53,7 @@ export abstract class Users<T extends IUser> {
   /**
    * logPerson() функция логирования
    */
-  public logPerson() {
+  public logPersons() {
     this._userList.forEach((item: T, i: number) => {
       console.log(`${i}  - ${item.age} лет\t - ${item.firstname}\t ${item.surname},\t ${item.id}`);
     });
